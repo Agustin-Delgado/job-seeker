@@ -8,7 +8,7 @@ const companySchema = z.object({
   profile_picture_url: z.string().url(),
 });
 
-const jobSchema = z.object({
+export const jobSchema = z.object({
   type: z.literal("JOB"),
   id: z.string(),
   reference_id: z.string(),
