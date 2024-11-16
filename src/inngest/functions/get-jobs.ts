@@ -20,7 +20,7 @@ export const getJobs = inngest.createFunction(
     const newJobs: RawJob[] = [];
 
     while (hasMore) {
-      let url = `${UNIPILE_URL}/api/v1/linkedin/search?account_id=${UNIPILE_API_KEY}`;
+      let url = `${UNIPILE_URL}/api/v1/linkedin/search?account_id=${UNIPILE_ACCOUNT_ID}`;
       if (cursor) {
         url += `&cursor=${encodeURIComponent(cursor)}`;
       }
@@ -29,7 +29,7 @@ export const getJobs = inngest.createFunction(
         const response = await fetch(url, {
           method: "POST",
           headers: {
-            "X-API-KEY": UNIPILE_ACCOUNT_ID,
+            "X-API-KEY": UNIPILE_API_KEY,
             Accept: "application/json",
             "Content-Type": "application/json",
           },
