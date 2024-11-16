@@ -5,6 +5,9 @@ import { getJobs } from "@/inngest/functions/get-jobs";
 import { processJobs } from "@/inngest/functions/process-jobs";
 import { removeJobs } from "@/inngest/functions/remove-old-jobs";
 
+export const maxDuration = 60;
+export const dynamic = 'force-dynamic';
+
 export const { GET, POST, PUT } = serve({
   client: inngest,
   functions: [
